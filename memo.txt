@@ -1,0 +1,58 @@
+npm install --save firebase
+npm install --save axios
+npm install --save vuex
+npm install --save vuexfire
+
+heroku -v
+heroku --help
+heroku login
+heroku keys:add
+C:\Users\bpanaget\.ssh\github_rsa.pub
+heroku keys
+ssh -v git@heroku.com //not working
+
+
+heroku create lightstools
+heroku config:set NODE_ENV=production --app lightstools
+git push heroku
+heroku open //not working
+
+
+npm install express --save
+
+
+// server.js
+var express = require('express');
+var path = require('path');
+var serveStatic = require('serve-static');
+app = express();
+app.use(serveStatic(__dirname + "/dist"));
+var port = process.env.PORT || 5000;
+app.listen(port);
+console.log('server started '+ port);
+
+
+npm run build
+
+
+node server.js
+
+package.json
+scripts:{
+ "start": "node server.js",  <--- EDIT THIS LINE HERE
+
+
+dans .gitignore
+dist/  <--- REMOVE THIS LINE
+
+
+git add . && git commit -a -m "Adding files."
+
+git push
+
+git push heroku
+
+
+
+
+git remote add heroku git@heroku.com:lights.git
