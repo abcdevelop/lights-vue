@@ -1,6 +1,7 @@
 <template>
   <div id="app" :style="{backgroundColor:currentColor}">
     <button @click="onClick">Changer</button>
+    <h1>{{counter}} clics</h1>
   </div>
 </template>
 
@@ -11,21 +12,22 @@
   export default {
     name: 'app',
     created() {
-      this.$store.dispatch('setLightsRef',dbLightsRef)
+      this.$store.dispatch('setLightsRef', dbLightsRef)
     },
     computed: {
       ...mapGetters([
-        'currentColor'
+        'currentColor',
+        'counter'
       ])
     },
     methods: {
-      ...mapActions([
-        'addColor',
-        'changeColorIndex'
-      ]),
+      ...mapActions({
+        changeIndex: 'changeIndex',
+        incCounter: 'incCounter'
+      }),
       onClick() {
-        // this.addColor({values: ['green', 'orange', 'red'], index: 2})
-        this.changeColorIndex()
+        this.changeIndex()
+        this.incCounter()
       }
     }
   }
@@ -36,7 +38,15 @@
     height: 100vh;
     width: 100%;
   }
+
   button {
     height: 70px;
+    width: 73px;
+  }
+
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 </style>

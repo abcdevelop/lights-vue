@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { store } from './store/index.js'
+import store from './store/index.js'
 import App from './App.vue'
 
 // import axios from 'axios'
